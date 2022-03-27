@@ -4,7 +4,7 @@ CC = gcc
 CCFLAGS = -Wall -Werror -Wextra
 
 AR = ar
-ARFLAGS = rcus
+ARFLAGS = rcs
 
 RM = rm
 RMFLAGS = -rf
@@ -43,42 +43,34 @@ SRCS	 =	ft_isalpha.c	\
 			ft_putstr_fd.c	\
 			ft_putendl_fd.c	\
 			ft_putnbr_fd.c	\
-
-SRCS_BONUS = ft_lstnew.c		\
-			 ft_lstadd_front.c 	\
-			 ft_lstsize.c		\
-			 ft_lstlast.c		\
-			 ft_lstadd_back.c	\
-			 ft_lstdelone.c		\
-			 ft_lstclear.c		\
-			 ft_lstiter.c		\
-			 ft_lstmap.c		\
+			ft_lstnew.c		\
+			ft_lstadd_front.c 	\
+			ft_lstsize.c		\
+			ft_lstlast.c		\
+			ft_lstadd_back.c	\
+			ft_lstdelone.c		\
+			ft_lstclear.c		\
+			ft_lstiter.c		\
+			ft_lstmap.c		\
 
 OBJS = $(SRCS:.c=.o)
 
-OBJS_BONUS = $(SRCS_BONUS:.c=.o)
-
 all : $(NAME)
-
-bonus : $(OBJS) $(OBJS_BONUS)
-	$(AR) $(ARFLAGS) $(NAME) $^
 
 $(NAME) : $(OBJS)
 	$(AR) $(ARFLAGS) $@ $^
 
 $(OBJS) : ./libft.h
 
-$(OBJS_BONUS) : ./libft.h
-
 %.o : %.c
 	$(CC) $(CCFLAGS) -c $< -o $@
 
 clean :
-	$(RM) $(RMFLAGS) $(OBJS) $(OBJS_BONUS)
+	$(RM) $(RMFLAGS) $(OBJS)
 
 fclean : clean
 	$(RM) $(RMFLAGS) $(NAME)
 
 re : fclean all
 
-.PHONY: all bonus clean fclean re
+.PHONY: all clean fclean re

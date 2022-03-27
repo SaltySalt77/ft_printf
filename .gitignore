@@ -2,3 +2,4 @@ main.c
 *.o
 *.a
 a.out
+test*
