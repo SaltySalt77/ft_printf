@@ -6,21 +6,11 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/27 20:53:56 by hyna              #+#    #+#             */
-/*   Updated: 2022/04/02 19:12:54 by hyna             ###   ########.fr       */
+/*   Updated: 2022/04/02 20:02:05 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-static int	conversion_c(va_list	ap)
-{
-	int		result;
-	char	c;
-
-	c = va_arg(ap, int);
-	result = write(1, &c, 1);
-	return (result);
-}
 
 static int	which_conversion(char	*c, va_list ap)
 {
@@ -28,9 +18,9 @@ static int	which_conversion(char	*c, va_list ap)
 
 	if (c == 'c')
 		result = conversion_c(ap);
-	/*else if (c == 's')
-		result = conversion_s();
-	else if (c == 'p')
+	else if (c == 's')
+		result = conversion_s(ap);
+	/*else if (c == 'p')
 		result = conversion_p();
 	else if (c == 'd')
 		result = conversion_d();
@@ -41,13 +31,12 @@ static int	which_conversion(char	*c, va_list ap)
 	else if (c == 'x')
 		result = conversion_x();
 	else if (c == 'X')
-		result = conversion_upper_x();
+		result = conversion_upper_x();*/
 	else
 	{
 		result = write(1, "%", 1);
 		result += write(1, &c, 1);
 	}
-	*/
 	return (result);
 }
 
