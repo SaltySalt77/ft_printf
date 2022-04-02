@@ -6,13 +6,13 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/27 20:53:56 by hyna              #+#    #+#             */
-/*   Updated: 2022/04/02 20:02:05 by hyna             ###   ########.fr       */
+/*   Updated: 2022/04/02 20:11:10 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	which_conversion(char	*c, va_list ap)
+static int	which_conversion(char	c, va_list ap)
 {
 	int	result;
 
@@ -74,7 +74,7 @@ int	ft_printf(const char	*format, ...)
 	int	    result;
 
 	va_start(ap, format);
-	result = check_fromat(format, ap);
+	result = check_format(format, ap);
 	va_end(ap);
 	if (result == -1)
 		return (-1);
