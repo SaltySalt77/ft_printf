@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/27 20:53:56 by hyna              #+#    #+#             */
-/*   Updated: 2022/04/02 20:11:10 by hyna             ###   ########.fr       */
+/*   Updated: 2022/04/02 20:34:48 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,23 +20,20 @@ static int	which_conversion(char	c, va_list ap)
 		result = conversion_c(ap);
 	else if (c == 's')
 		result = conversion_s(ap);
-	/*else if (c == 'p')
-		result = conversion_p();
+	//else if (c == 'p')
+	//	result = conversion_p();
 	else if (c == 'd')
-		result = conversion_d();
+		result = conversion_di(ap);
 	else if (c == 'i')
-		result = conversion_i();
-	else if (c == 'u')
+		result = conversion_di(ap);
+	/*else if (c == 'u')
 		result = conversion_u();
 	else if (c == 'x')
 		result = conversion_x();
 	else if (c == 'X')
 		result = conversion_upper_x();*/
 	else
-	{
-		result = write(1, "%", 1);
-		result += write(1, &c, 1);
-	}
+		return (-1);
 	return (result);
 }
 

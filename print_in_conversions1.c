@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/02 19:30:04 by hyna              #+#    #+#             */
-/*   Updated: 2022/04/02 19:36:19 by hyna             ###   ########.fr       */
+/*   Updated: 2022/04/02 20:35:29 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,20 @@ int	conversion_s(va_list	ap)
 
 	s = va_arg(ap, char	*);
 	result = write(1, s, ft_strlen(s));
+	return (result);
+}
+
+int	conversion_di(va_list	ap)
+{
+	int		result;
+	int		num;
+	char	*s;
+
+	num = va_arg(ap, int);
+	s = ft_itoa(num);
+	if (!s)
+		return (-1);
+	result = write(1, s, ft_strlen(s));
+	free(s);
 	return (result);
 }
