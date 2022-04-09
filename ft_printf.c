@@ -17,7 +17,7 @@ static int	which_conversion(char c, va_list ap)
 	int	result;
 
 	if (c == 'c')
-		result = conversion_c(ap);
+		result = conversion_c(ap); // convert_c
 	else if (c == 's')
 		result = conversion_s(ap);
 	else if (c == 'p')
@@ -43,7 +43,7 @@ static int	check_format(const char	*format, va_list ap)
 {
 	int	result;
 	int	i;
-	int	tmp;
+	int	tmp; // ?
 
 	result = 0;
 	i = 0;
@@ -51,7 +51,7 @@ static int	check_format(const char	*format, va_list ap)
 	{
 		if (format[i] == '%')
 		{
-			tmp = which_conversion(format[++i], ap);
+			tmp = which_conversion(format[++i], ap); // ?
 			if (tmp == -1)
 				return (-1);
 			i++;
@@ -59,7 +59,7 @@ static int	check_format(const char	*format, va_list ap)
 		}
 		else
 		{
-			write(1, &(format[i]), 1);
+			write(1, &(format[i]), 1); // write 
 			result++;
 			i++;
 		}
@@ -73,9 +73,15 @@ int	ft_printf(const char	*format, ...)
 	int		result;
 
 	va_start(ap, format);
-	result = check_format(format, ap);
+	result = check_format(format, ap); // <- 함수명
 	va_end(ap);
-	if (result == -1)
+	if (result == -1) // magic nbr 지양
 		return (-1);
 	return (result);
+}
+
+int	main(void)
+{
+	ft_printf("test");
+	return (0);
 }
