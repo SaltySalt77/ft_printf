@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 13:04:42 by hyna              #+#    #+#             */
-/*   Updated: 2022/04/09 15:27:10 by hyna             ###   ########.fr       */
+/*   Updated: 2022/04/09 15:54:59 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int	conversion_p(va_list	ap)
 	result = 0;
 	pointer = (unsigned long long) va_arg(ap, void *);
 	result += write(1, "0x", 2);
+	result += conversion_p_util(pointer, "0123456789abcdef");
 	return (result);
 }
 

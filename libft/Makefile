@@ -6,13 +6,13 @@
 #    By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/09 13:26:47 by hyna              #+#    #+#              #
-#    Updated: 2022/04/09 13:26:49 by hyna             ###   ########.fr        #
+#    Updated: 2022/04/09 15:44:39 by hyna             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-CC = gcc
+CC = cc
 CCFLAGS = -Wall -Werror -Wextra
 
 AR = ar
