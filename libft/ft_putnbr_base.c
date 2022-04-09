@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 11:53:51 by hyna              #+#    #+#             */
-/*   Updated: 2022/04/09 14:05:27 by hyna             ###   ########.fr       */
+/*   Updated: 2022/04/09 16:03:27 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,11 @@ static int	check_base(char	*str)
 	return (len);
 }
 
-static void	print_num(unsigned long long nbr, char *base, unsigned int len, int	*result)
+static void	print_num(unsigned long long nbr, char *base, int len, int	*result)
 {
 	char	c;
 
-	if (nbr < len)
+	if (nbr < (unsigned int)len)
 	{
 		c = base[nbr];
 		write(1, &c, 1);

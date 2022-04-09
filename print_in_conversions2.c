@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 13:04:42 by hyna              #+#    #+#             */
-/*   Updated: 2022/04/09 15:54:59 by hyna             ###   ########.fr       */
+/*   Updated: 2022/04/09 16:05:03 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	conversion_p(va_list	ap)
 {
-	int			result;
+	int					result;
 	unsigned long long	pointer;
 
 	result = 0;
