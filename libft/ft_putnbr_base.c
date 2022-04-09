@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 11:53:51 by hyna              #+#    #+#             */
-/*   Updated: 2022/04/09 11:58:09 by hyna             ###   ########.fr       */
+/*   Updated: 2022/04/09 14:05:27 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static int	check_base(char	*str)
 	return (len);
 }
 
-static void	print_num(long long nbr, char *base, int len, int	*result)
+static void	print_num(unsigned long long nbr, char *base, unsigned int len, int	*result)
 {
 	char	c;
 
@@ -69,7 +69,7 @@ int	ft_putnbr_base(long long nbr, char	*base)
 			nbr = -nbr;
 			result += write(1, "-", 1);
 		}
-		print_num(nbr, base, len, &result);
+		print_num((unsigned long long)nbr, base, len, &result);
 	}
 	return (result);
 }

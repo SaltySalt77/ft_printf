@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/02 19:30:04 by hyna              #+#    #+#             */
-/*   Updated: 2022/04/09 13:37:24 by hyna             ###   ########.fr       */
+/*   Updated: 2022/04/09 15:05:31 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ int	conversion_s(va_list	ap)
 	char	*s;
 
 	s = va_arg(ap, char *);
+	if (!s)
+		return (write(1, "(null)", 6));
 	result = write(1, s, ft_strlen(s));
 	return (result);
 }

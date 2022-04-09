@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/27 20:54:46 by hyna              #+#    #+#             */
-/*   Updated: 2022/04/09 13:39:57 by hyna             ###   ########.fr       */
+/*   Updated: 2022/04/09 14:49:57 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include "./libft/libft.h"
 # include <stdarg.h>
 
+char	*ft_itoa_base(unsigned int n, char	*base);
 int	ft_printf(const char	*format, ...);
 int	conversion_c(va_list	ap);
 int	conversion_di(va_list	ap);
