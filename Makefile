@@ -6,7 +6,7 @@
 #    By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/27 17:21:21 by hyna              #+#    #+#              #
-#    Updated: 2022/04/02 20:14:50 by hyna             ###   ########.fr        #
+#    Updated: 2022/04/09 13:43:55 by hyna             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@ NAME = libftprintf.a
 CCFLAGS = -Wall -Werror -Wextra
 SRCS = ft_printf.c \
 	   print_in_conversions1.c \
+	   print_in_conversions2.c \
 
 OBJS = $(SRCS:.c=.o)
 
@@ -38,8 +39,5 @@ fclean : clean
 	rm -rf $(NAME)
 
 re : fclean all
-	
-test : re
-	cc main.c $(NAME)
 
 .PHONY : all clean fclean re libft

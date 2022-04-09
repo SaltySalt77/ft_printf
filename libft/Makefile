@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/04/09 13:26:47 by hyna              #+#    #+#              #
+#    Updated: 2022/04/09 13:26:49 by hyna             ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = libft.a
 
 CC = gcc
@@ -51,7 +63,8 @@ SRCS	 =	ft_isalpha.c	\
 			ft_lstdelone.c		\
 			ft_lstclear.c		\
 			ft_lstiter.c		\
-			ft_lstmap.c		\
+			ft_lstmap.c			\
+			ft_putnbr_base.c	\
 
 OBJS = $(SRCS:.c=.o)
 
